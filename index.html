@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {
+      background-color: hsl(0, 0%, 98%);
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    :root {
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+    }
+
+    *,
+    ::before,
+    ::after {
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: inherit;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .nav__bar {
+      padding: 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .content {
+      display: flex;
+      gap: 3em;
+      justify-content: center;
+      align-items: center;
+      padding: 3em;
+    }
+
+    .content__left {
+      display: flex;
+      padding-top: 3em;
+      flex-direction: column;
+      max-width: 500px;
+      gap: 3em;
+    }
+
+    .content__info {
+      padding-right: 5em;
+    }
+
+    .content__right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 500px;
+      height: 100%;
+    }
+
+    .companies {
+      display: flex;
+      padding-top: 2em;
+      gap: 1.5em;
+    }
+
+    .menu__options {
+      display: flex;
+      gap: 2em;
+    }
+
+    .menu__options button {
+      background-color: transparent;
+      color: hsl(0, 0%, 41%);
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu__options button:hover {
+      color: black;
+    }
+
+    .menu_option {
+      display: flex;
+      position: relative;
+      color: hsl(0, 0%, 41%);
+    }
+
+    .menu__dropdown__options {
+      display: none;
+      position: absolute;
+      top: 1.5em;
+      list-style: none;
+      padding: 1em;
+    }
+
+    .move__left {
+      left: -3em;
+    }
+
+    .menu__dropdown__options ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      font-size: 12px;
+    }
+
+    li:hover {
+      color: black;
+      cursor: pointer;
+    }
+
+    .menu_option:hover .menu__dropdown__options {
+      display: flex;
+      background-color: white;
+      box-shadow: 0px 0px 10px 2px rgb(215, 215, 215);
+      border-radius: 7px;
+      padding: 0.7em;
+    }
+
+    .menu__item {
+      display: flex;
+      gap: 0.7em;
+    }
+
+    .navbar__right__buttons {
+      display: flex;
+      gap: 1em;
+    }
+
+    .login__button {
+      background-color: transparent;
+      border: none;
+      color: hsl(0, 0%, 41%);
+    }
+
+    .login__button:hover {
+      color: black;
+    }
+
+    .register__button {
+      background-color: transparent;
+      border-radius: 7px;
+      border: solid 1px hsl(0, 0%, 41%);
+      padding: 0.5em;
+      color: hsl(0, 0%, 41%);
+    }
+
+    .register__button:hover {
+      color: black;
+      border: solid 1px black;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .learn-more__button {
+      padding: 1em 2em;
+      border-radius: 12px;
+      border: none;
+      background-color: black;
+      color: white;
+      border: 1px solid black;
+    }
+
+    .learn-more__button:hover {
+      background-color: white;
+      color: black;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="nav__bar">
+    <div class="menu__options">
+      <img src="./images/logo.svg"></img>
+      <div class="menu_option">
+        <div>
+          <button>Features</button>
+          <img src="./images/icon-arrow-down.svg"></img>
+        </div>
+        <div class="menu__dropdown__options move__left">
+          <ul class="list">
+            <div class="menu__item">
+              <img src="./images/icon-todo.svg" height="16" width="16">
+              <li>Todo List</li>
+            </div>
+            <div class="menu__item">
+              <img src="./images/icon-calendar.svg" height="16" width="16">
+              <li>Calendars</li>
+            </div>
+            <div class="menu__item">
+              <img src="./images/icon-reminders.svg" height="16" width="16">
+              <li>Reminders</li>
+            </div>
+            <div class="menu__item">
+              <img src="./images/icon-planning.svg" height="16" width="16">
+              <li>Planning</li>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="menu_option">
+        <div>
+          <button>Company</button>
+          <img src="./images/icon-arrow-down.svg"></img>
+        </div>
+        <div class="menu__dropdown__options">
+          <ul>
+            <li>History</li>
+            <li>Our Team</li>
+            <li>Blog</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <button>Careers</button>
+      </div>
+      <div>
+        <button>About</button>
+      </div>
+    </div>
+    <div>
+      <div class="navbar__right__buttons">
+        <button class="login__button">Login</button>
+        <button class="register__button">Register</button>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content__left">
+      <div>
+        <h1 style="font-size: 3em;">Make remote work</h1>
+      </div>
+      <div class="content__info">
+        <p>Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+      </div>
+      <div>
+        <button class="learn-more__button">Learn more</button>
+      </div>
+      <div class="companies">
+        <div>
+          <img src="./images/client-audiophile.svg"></img>
+        </div>
+        <div>
+          <img src="./images/client-databiz.svg"></img>
+        </div>
+        <div>
+          <img src="./images/client-maker.svg"></img>
+        </div>
+        <div>
+          <img src="./images/client-meet.svg"></img>
+        </div>
+      </div>
+    </div>
+    <div class="content__right">
+      <div>
+        <img src="./images/image-hero-desktop.png" height="400" height="400"></img>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
